@@ -26,5 +26,18 @@
         $(".authenticated").show()
     });
 </script>
+    <div>
+        <button onClick="logout()" class="btn btn-primary">Logout</button>
+    </div>
+<script type="text/javascript">
+var logout = function() {
+$.post("/logout", function() {
+$("#user").html('');
+$(".unauthenticated").show();
+$(".authenticated").hide();
+})
+return true;
+}
+</script>
 </body>
 </html>
